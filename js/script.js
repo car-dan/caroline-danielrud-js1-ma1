@@ -71,13 +71,16 @@ function createCats(cats) {
 
     for (let i = 0; i < cats.length; i++){
         
-        let ageCats = "Age unknown";
+        let catsAge = "Age unknown";
 
         if (cats[i].age) {
-            ageCats = cats[i].age;
-        }
+            catsAge = cats[i].age;
+        };
         
-        html += "<div>" + "<h5>" + cats[i].name + "</h5>" + "<p>" + ageCats+ "</p>" + "</div>";
+        html += `<div>
+        <h5>${cats[i].name}</h5>
+        <p>${catsAge}</p>
+        </div>`;
 
     }
     return html;
@@ -85,7 +88,8 @@ function createCats(cats) {
 
 const catContainer = document.querySelector(".cat-container");
 
-catContainer.innerHTML = createCats(cats);
+const newHtml = createCats(cats);
+catContainer.innerHTML = newHtml;
 
 
 
